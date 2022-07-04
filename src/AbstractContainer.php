@@ -316,9 +316,6 @@ abstract class AbstractContainer implements Countable, RecursiveIterator
             if ($propertyValue === $value) {
                 return $page;
             }
-            if ((string) $propertyValue === $value) {
-                return $page;
-            }
         }
 
         return null;
@@ -341,10 +338,6 @@ abstract class AbstractContainer implements Countable, RecursiveIterator
         foreach ($iterator as $page) {
             $propertyValue = $page->get($property);
             if ($propertyValue === $value) {
-                $found[] = $page;
-                continue;
-            }
-            if ((string) $propertyValue === $value) {
                 $found[] = $page;
             }
         }
