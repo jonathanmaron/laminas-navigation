@@ -318,11 +318,6 @@ abstract class AbstractContainer implements Countable, RecursiveIterator
             if ($propertyValue === $value) {
                 return $page;
             }
-            /*
-            if ((string) $propertyValue === $value) {
-                return $page;
-            }
-            */
         }
 
         return null;
