@@ -8,24 +8,12 @@
     ],
     "homepage": "https://laminas.dev",
     "support": {
-        "docs": "https://docs.laminas.dev/laminas-navigation/",
         "issues": "https://github.com/laminas/laminas-navigation/issues",
-        "source": "https://github.com/laminas/laminas-navigation",
-        "rss": "https://github.com/laminas/laminas-navigation/releases.atom",
+        "forum": "https://discourse.laminas.dev",
         "chat": "https://laminas.dev/chat",
-        "forum": "https://discourse.laminas.dev"
-    },
-    "config": {
-        "sort-packages": true,
-        "platform": {
-            "php": "7.4.99"
-        }
-    },
-    "extra": {
-        "laminas": {
-            "component": "Laminas\\Navigation",
-            "config-provider": "Laminas\\Navigation\\ConfigProvider"
-        }
+        "source": "https://github.com/laminas/laminas-navigation",
+        "docs": "https://docs.laminas.dev/laminas-navigation/",
+        "rss": "https://github.com/laminas/laminas-navigation/releases.atom"
     },
     "require": {
         "php": "^7.4 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
@@ -45,6 +33,9 @@
         "phpspec/prophecy-phpunit": "^2.0.1",
         "phpunit/phpunit": "^9.5.10"
     },
+    "conflict": {
+        "zendframework/zend-navigation": "*"
+    },
     "suggest": {
         "laminas/laminas-config": "^3.7, to provide page configuration (optional, as arrays and Traversables are also allowed)",
         "laminas/laminas-permissions-acl": "^2.9, to provide ACL-based access restrictions to pages",
@@ -62,6 +53,21 @@
             "LaminasTest\\Navigation\\": "test/"
         }
     },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "7.4.99"
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "laminas": {
+            "component": "Laminas\\Navigation",
+            "config-provider": "Laminas\\Navigation\\ConfigProvider"
+        }
+    },
     "scripts": {
         "check": [
             "@cs-check",
@@ -71,8 +77,5 @@
         "cs-fix": "phpcbf",
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
-    },
-    "conflict": {
-        "zendframework/zend-navigation": "*"
     }
 }
